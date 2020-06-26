@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.fxmisc.richtext.CodeArea?>
+
+
+<VBox alignment="TOP_CENTER" prefHeight="650.0" prefWidth="1100.0" styleClass="background-color" stylesheets="@../style/simulation-view-style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.supsi.teencpu.javafx.jfxcontrollers.SimulationController">
+   <children>
+      <HBox alignment="CENTER_LEFT" fillHeight="false" prefHeight="0.0" prefWidth="368.0" spacing="5.0" styleClass="background-color" stylesheets="@../style/simulation-view-style.css">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#openInstructionsFile" prefHeight="30.0" prefWidth="35.0" styleClass="transparent-button" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/open-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <tooltip>
+                  <Tooltip text="Open" textAlignment="CENTER">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+            </Button>
+            <Button alignment="CENTER" layoutX="255.0" layoutY="10.0" mnemonicParsing="false" onAction="#saveSimulation" prefHeight="30.0" prefWidth="35.0" styleClass="transparent-button" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="1.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="49.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/save-icon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <tooltip>
+                  <Tooltip text="Save" textAlignment="CENTER">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </Tooltip>
+               </tooltip>
+            </Button>
+            <Button fx:id="seeLastSimBtn" alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="CENTER" mnemonicParsing="false" onAction="#openSavedSimulations" styleClass="home-buttons" stylesheets="@../style/home-view-style.css" text="%saved.simulation.button" textAlignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <HBox fx:id="simulationRoot" alignment="CENTER" prefHeight="650.0" prefWidth="1100.0" spacing="5.0" styleClass="background-color" stylesheets="@../style/simulation-view-style.css">
+         <children>
+            <VBox prefHeight="563.0" prefWidth="567.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="inputTextField" alignment="CENTER" prefHeight="50.0" prefWidth="293.0" promptText="Input" styleClass="input" stylesheets="@../style/simulation-view-style.css" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets left="40.0" right="40.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label fx:id="inputIntegersLbl" alignment="CENTER" blendMode="SRC_ATOP" prefHeight="40.0" prefWidth="373.0" textAlignment="CENTER">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                   <StackPane fx:id="codeAreaStackPane" prefHeight="368.0" prefWidth="373.0" stylesheets="@../style/simulation-view-style.css" VBox.vgrow="ALWAYS">
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                     <children>
+                        <CodeArea fx:id="codeArea" prefHeight="606.0" prefWidth="676.0" stylesheets="@../style/simulation-view-style.css">
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </CodeArea>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" />
+                     </VBox.margin>
+                  </StackPane>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox alignment="TOP_CENTER" prefHeight="553.0" prefWidth="864.0" spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="45.0" prefWidth="428.0" spacing="10.0" styleClass="background-color" stylesheets="@../style/simulation-view-style.css">
+                     <padding>
+                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                         <Button fx:id="stepBackBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stepBack" prefHeight="25.0" prefWidth="30.0" styleClass="simulation-control-buttons" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+                           <font>
+                              <Font name="FreeSans" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/previous-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </Button>
+                         <Button fx:id="executeSimulationBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" mnemonicParsing="false" onAction="#executeSimulation" prefHeight="30.0" prefWidth="40.0" styleClass="start-simulation-button" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+                           <font>
+                              <Font name="FreeSans" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                               <ImageView fx:id="playPauseImageView" fitWidth="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                     <Image url="@../icons/play.png" />
+                                 </image>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                               <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                        </Button>
+                         <Button fx:id="stepOverBtn" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="2.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#stepOver" prefHeight="25.0" prefWidth="30.0" styleClass="simulation-control-buttons" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+                           <font>
+                              <Font name="FreeSans" size="13.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="15.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/next-icon.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <padding>
+                              <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                           </padding>
+                        </Button>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="217.0" prefWidth="651.0" spacing="10.0">
+                     <children>
+                                <Label fx:id="pcLbl" alignment="CENTER" blendMode="SRC_ATOP" text="PC:" textFill="RED">
+                                    <font>
+                                        <Font name="FreeSans" size="26.0" />
+                                    </font>
+                                </Label>
+                         <Label fx:id="pcValueLbl" alignment="CENTER" blendMode="SRC_ATOP" text="0" textFill="RED">
+                                    <font>
+                                        <Font name="FreeSans" size="26.0" />
+                                    </font>
+                                </Label>
+                     </children>
+                  </HBox>
+                       <Label fx:id="stackLbl" alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="CENTER" prefHeight="195.0" prefWidth="178.0" text="%stack.state.label">
+                           <font>
+                               <Font size="14.0" />
+                           </font>
+                           <VBox.margin>
+                               <Insets />
+                           </VBox.margin>
+                       </Label>
+                        <VBox fx:id="stackVBox" alignment="CENTER" fillWidth="false" prefHeight="465.0" prefWidth="651.0" spacing="2.0">
+                         <children>
+                             <Label id="stack" fx:id="stackLbl5" alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="CENTER" prefHeight="65.0" prefWidth="140.0" styleClass="stack" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+                                 <VBox.margin>
+                                     <Insets />
+                                 </VBox.margin>
+                                 <font>
+                                     <Font size="28.0" />
+                                 </font>
+                             </Label>
+                             <Label id="stack" fx:id="stackLbl4" alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="CENTER" layoutX="168.0" layoutY="325.0" prefHeight="65.0" prefWidth="140.0" styleClass="stack" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+                                 <VBox.margin>
+                                     <Insets />
+                                 </VBox.margin>
+                           <font>
+                               <Font size="28.0" />
+                           </font>
+                             </Label>
+                             <Label id="stack" fx:id="stackLbl3" alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="CENTER" layoutX="168.0" layoutY="338.0" prefHeight="65.0" prefWidth="140.0" styleClass="stack" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+                                 <VBox.margin>
+                                     <Insets />
+                                 </VBox.margin>
+                           <font>
+                               <Font size="28.0" />
+                           </font>
+                             </Label>
+                             <Label id="stack" fx:id="stackLbl2" alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="CENTER" layoutX="168.0" layoutY="351.0" prefHeight="65.0" prefWidth="140.0" styleClass="stack" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+                                 <VBox.margin>
+                                     <Insets />
+                                 </VBox.margin>
+                           <font>
+                               <Font size="28.0" />
+                           </font>
+                             </Label>
+                             <Label id="stack" fx:id="stackLbl1" alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="CENTER" layoutX="168.0" layoutY="364.0" prefHeight="65.0" prefWidth="140.0" styleClass="stack" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+                                 <VBox.margin>
+                                     <Insets />
+                                 </VBox.margin>
+                                 <font>
+                                     <Font size="28.0" />
+                                 </font>
+                             </Label>
+                             <Label id="stack" fx:id="stackLbl0" alignment="CENTER" blendMode="SRC_ATOP" contentDisplay="CENTER" layoutX="63.0" layoutY="482.0" prefHeight="65.0" prefWidth="140.0" styleClass="stack" stylesheets="@../style/simulation-view-style.css" textAlignment="CENTER">
+                           <font>
+                              <Font size="28.0" />
+                           </font>
+                        </Label>
+                         </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                        </VBox>
+                          <Label fx:id="outputLbl" alignment="CENTER" blendMode="SRC_ATOP" text="Output">
+                              <font>
+                                  <Font size="14.0" />
+                              </font>
+                          </Label>
+                          <HBox fx:id="outputHBox" alignment="CENTER" prefHeight="205.0" prefWidth="627.0" spacing="10.0">
+                              <children>
+                                  <Label id="input-output" fx:id="outputLbl0" alignment="CENTER" blendMode="SRC_ATOP" prefHeight="50.0" prefWidth="50.0" styleClass="output" stylesheets="@../style/simulation-view-style.css">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                                  <Label id="input-output" fx:id="outputLbl1" alignment="CENTER" blendMode="SRC_ATOP" layoutX="224.0" layoutY="35.0" prefHeight="50.0" prefWidth="50.0" styleClass="output" stylesheets="@../style/simulation-view-style.css">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                                  <Label id="input-output" fx:id="outputLbl2" alignment="CENTER" blendMode="SRC_ATOP" layoutX="247.0" layoutY="35.0" prefHeight="50.0" prefWidth="50.0" styleClass="output" stylesheets="@../style/simulation-view-style.css">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                                  <Label id="input-output" fx:id="outputLbl3" alignment="CENTER" blendMode="SRC_ATOP" layoutX="270.0" layoutY="35.0" prefHeight="50.0" prefWidth="50.0" styleClass="output" stylesheets="@../style/simulation-view-style.css">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                                  <Label id="input-output" fx:id="outputLbl4" alignment="CENTER" blendMode="SRC_ATOP" layoutX="293.0" layoutY="35.0" prefHeight="50.0" prefWidth="50.0" styleClass="output" stylesheets="@../style/simulation-view-style.css">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                                  <Label id="input-output" fx:id="outputLbl5" alignment="CENTER" blendMode="SRC_ATOP" layoutX="316.0" layoutY="35.0" prefHeight="50.0" prefWidth="50.0" styleClass="output" stylesheets="@../style/simulation-view-style.css">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                                  <Label id="input-output" fx:id="outputLbl6" alignment="CENTER" blendMode="SRC_ATOP" layoutX="339.0" layoutY="35.0" prefHeight="50.0" prefWidth="50.0" styleClass="output" stylesheets="@../style/simulation-view-style.css">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <Label id="input-output" fx:id="outputLbl7" alignment="CENTER" blendMode="SRC_ATOP" layoutX="494.0" layoutY="19.0" prefHeight="50.0" prefWidth="50.0" styleClass="output" stylesheets="@../style/simulation-view-style.css">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                              </children>
+                          </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

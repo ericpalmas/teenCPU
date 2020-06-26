@@ -1,0 +1,36 @@
+.main-background {
+    -fx-background-color: white;
+}
+
+.open-simulation-button {
+    -fx-background-color: #2ba89a;
+    -fx-text-fill: white;
+}
+
+.remove-simulation-button {
+    -fx-background-color: #ff4444;
+    -fx-text-fill: white;
+}
+
+.simulation-info-label {
+    -fx-border-color: #2baa9c;
+}
+
+.list-cell {
+    -fx-background-color: white;
+}
+
+.list-cell:filled:selected:focused {
+    -fx-background-color: #2baa9c;
+    -fx-text-fill: white;
+}
+
+.list-cell:filled:hover {
+    -fx-text-fill: #2bbfb1;
+}
+
+.simulations-list {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-border-color: #2bbfb1;
+}

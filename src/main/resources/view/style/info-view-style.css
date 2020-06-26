@@ -1,0 +1,22 @@
+.titledPane {
+    -fx-background-color: white;
+    -fx-text-fill: white;
+}
+
+.titled-pane > .title {
+    -fx-background-color: #33b5e5;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background-radius: 0;
+    -fx-border-style: solid;
+    -fx-border-color: white;
+    -fx-padding: 0.55em 0.833333em 0.55em 0.833333em; /* 2 10 3 10 */
+}
+
+.background-color{
+    -fx-background-color: white;
+}
+
+.info-label {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2E2E2E;
+}

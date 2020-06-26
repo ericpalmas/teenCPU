@@ -1,0 +1,13 @@
+.main-background {
+    -fx-background-color: white;
+}
+
+.home-buttons {
+    -fx-background-color: transparent;
+    -fx-text-fill: #0099CC;
+    -fx-font-size: 14;
+}
+
+.home-buttons:hover {
+    -fx-underline: true;
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="informationRoot" alignment="TOP_CENTER" maxWidth="-Infinity" prefWidth="600.0" spacing="20.0" styleClass="background-color" stylesheets="@../style/info-view-style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.supsi.teencpu.javafx.jfxcontrollers.InformationController">
+   <children>
+      <Label blendMode="SRC_ATOP" text="%info.view.title">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Accordion fx:id="accordion">
+        <panes>
+          <TitledPane fx:id="instructionsInfoPane" animated="false" styleClass="titledPane" stylesheets="@../style/info-view-style.css" text="%instructions.info.button">
+               <content>
+                  <Label alignment="TOP_CENTER" lineSpacing="2.0" styleClass="info-label" text="%instructions.info.clicked" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </content>
+          </TitledPane>
+          <TitledPane fx:id="aboutPane" animated="false" styleClass="titledPane" text="%about.the.application.button">
+               <content>
+                  <Label alignment="TOP_CENTER" lineSpacing="2.0" styleClass="info-label" text="%about.the.application.clicked" textAlignment="CENTER" wrapText="true">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </Label>
+               </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="20.0" />
+   </padding>
+</VBox>

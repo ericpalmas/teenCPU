@@ -1,0 +1,26 @@
+.main-background {
+    -fx-background-color: white;
+}
+
+.menu-style {
+    -fx-background-color: white;
+}
+
+.menu-buttons {
+    -fx-background-color: transparent;
+
+
+}
+
+.menu-buttons:hover {
+    -fx-border-color: #0099CC;
+    -fx-border-width: 0 0 3px 0;
+    -fx-border-style: solid;
+}
+
+.menu-buttons-clicked {
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 3px 0;
+    -fx-border-style: solid;
+    -fx-border-color: #0099CC;
+}

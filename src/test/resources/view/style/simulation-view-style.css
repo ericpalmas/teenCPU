@@ -1,0 +1,84 @@
+.start-simulation-button {
+    -fx-background-color: #00C851;
+
+}
+
+.start-simulation-button:hover {
+    -fx-background-color: #007E33;
+}
+
+.simulation-control-buttons {
+    -fx-background-color: #33b5e5;
+}
+
+.simulation-control-buttons:hover {
+    -fx-background-color: #0099CC;
+}
+
+.transparent-button {
+    -fx-background-color: transparent;
+}
+
+.background-color {
+    -fx-background-color: white;
+}
+
+.input {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2E2E2E;
+    -fx-border-color: #bdbdbd;
+    -fx-border-width: 0 0 1.5px 0;
+    -fx-border-radius: 0;
+
+}
+
+.input:focused {
+    -fx-border-color: #4B515D;
+    -fx-border-width: 0 0 2px 0;
+}
+
+.output{
+    -fx-background-color: whitesmoke;
+    -fx-text-fill: #2E2E2E;
+    -fx-border-color: #bdbdbd;
+    -fx-border-width: 0 0 1.5px 0;
+    -fx-border-radius: 0;
+}
+
+.code-area {
+    -fx-background-color: whitesmoke;
+    -fx-font-size: 12px;
+    -fx-highlight: dimgrey;
+    -fx-border-style: solid;
+    -fx-border-color: #bdbdbd;
+    -fx-border-width: 1.2px;
+}
+
+.code-area .selection {
+    -fx-fill: #bbdefb;
+}
+
+.code-area:focused {
+    -fx-border-color: #4B515D;
+    -fx-border-width:1.2px;
+}
+
+.stack {
+    -fx-background-color: whitesmoke;
+    -fx-border-color: #bdbdbd;
+    -fx-text-fill: #6b6b6b;
+    -fx-border-width: 0 1.2 1.2 1.22;
+}
+
+.keyword {
+    -fx-fill: #00C851;
+    -fx-font-weight: bold;
+    -fx-font-size: 16px;
+}
+
+.semicolon {
+    -fx-font-weight: bold;
+    -fx-fill: #ff3c1a;
+    -fx-font-size: 16px;
+}
+
